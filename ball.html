@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="p5.min.js"></script>
+    </head>
+    <style>
+        
+    </style>
+    <body>
+        <script>
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            var x;
+            var y;
+            var speed = 20;
+            var diameter = 50
+            var x1;
+            var y1;
+
+            function setup() {
+                createCanvas(w, h);
+                x = w/2;
+                y = h/2;
+                x1 = w/2;
+                y1 = h/2;
+            }
+
+            function draw() {
+                if ((x < w) || (x > 0) || (y < h) || (y > 100) && (x1 < w) || (x1 > 0) || (y1 < h) || (y1 > 100)){
+                diameter = random(50,80);
+                x += random(-speed,speed); 
+                y += random(-speed,speed);
+                ellipse(x,y,diameter,diameter);
+                x1 += random(-speed,speed); 
+                y1 += random(-speed,speed);
+                ellipse(x1,y1,diameter,diameter);
+                }
+                else {
+                    x = w/2;
+                    y = w/2;
+                    x1 = w/2;
+                    y1 = w/2;
+                }
+            }
+        </script>
+    </body>
+</html>
